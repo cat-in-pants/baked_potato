@@ -1,5 +1,5 @@
 import sys
-sys.path.append('c:/бяка/c/task_manager/db')
+sys.path.append('c:/бяка/разработка/task_manager/db')
 from connection import get_connection
 import pandas as pd
 from sqlalchemy import text
