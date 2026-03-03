@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+class Book {
+private:
+    std::string title;
+    int pages;
+
+public:
+    Book() {
+        title = "Неизвестно";
+        pages = 0;
+    }
+
+    Book(std::string t, int p) {
+        title = t;
+        pages = p;
+    }
+
+    void displayInfo() {
+        std::cout << "Название: " << title << ", Страниц: " << pages << std::endl;
+    }
+};
+
+int main() {
+    Book book1;
+    Book book2("Война и мир", 1300);
+
+    book1.displayInfo();
+    book2.displayInfo();
+
+    return 0;
+}
