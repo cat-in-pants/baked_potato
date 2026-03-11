@@ -1,0 +1,75 @@
+#include <iostream>
+#include <string>
+
+class Car {
+private:
+    std::string brand;
+    int year;
+    int speed;
+
+public:
+    void setData(std::string b, int y, int s) {
+        brand = b;
+        year = y;
+        speed = s;
+    }
+
+    void printInfo() {
+        std::cout << "Brand: " << brand << ", Year: " << year << ", Speed: " << speed << std::endl;
+    }
+};
+
+class BankAccount {
+private:
+    std::string accountNumber;
+    std::string owner;
+    double balance;
+
+public:
+    void setData(std::string accNum, std::string own, double bal) {
+        accountNumber = accNum;
+        owner = own;
+        balance = bal;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        }
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+
+class Animal {
+protected:
+    std::string name;
+
+public:
+    void setName(std::string n) {
+        name = n;
+    }
+};
+
+int main() {
+    Car car;
+    car.setData("Toyota", 2020, 180);
+    car.printInfo();
+
+    BankAccount account;
+    account.setData("123456", "furry", 1000.0);
+    account.deposit(500.0);
+    account.withdraw(200.0);
+    std::cout << "Balance: " << account.getBalance() << std::endl;
+
+    Animal animal;
+    animal.setName("cat");
+    
+    return 0;
+}
