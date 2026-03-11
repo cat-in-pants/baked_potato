@@ -1,0 +1,76 @@
+#include <iostream>
+#include <string>
+
+class Student {
+    std::string name;
+    int age;
+    double grade;
+
+public:
+    void setData(std::string n, int a, double g) {
+        name = n;
+        age = a;
+        grade = g;
+    }
+
+    void printInfo() {
+        std::cout << "Name: " << name << ", Age: " << age << ", Grade: " << grade << std::endl;
+    }
+};
+
+class Calculator {
+public:
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int sub(int a, int b) {
+        return a - b;
+    }
+
+    int mul(int a, int b) {
+        return a * b;
+    }
+
+    double div(double a, double b) {
+        return a / b;
+    }
+};
+
+class Rectangle {
+    int width;
+    int height;
+
+public:
+    void setSize(int w, int h) {
+        width = w;
+        height = h;
+    }
+
+    int area() {
+        return width * height;
+    }
+
+    int perimeter() {
+        return 2 * (width + height);
+    }
+};
+
+int main() {
+    Student student;
+    student.setData("John", 20, 4.5);
+    student.printInfo();
+
+    Calculator calc;
+    std::cout << "Add: " << calc.add(5, 3) << std::endl;
+    std::cout << "Sub: " << calc.sub(5, 3) << std::endl;
+    std::cout << "Mul: " << calc.mul(5, 3) << std::endl;
+    std::cout << "Div: " << calc.div(5.0, 2.0) << std::endl;
+
+    Rectangle rect;
+    rect.setSize(4, 5);
+    std::cout << "Area: " << rect.area() << std::endl;
+    std::cout << "Perimeter: " << rect.perimeter() << std::endl;
+
+    return 0;
+} 
